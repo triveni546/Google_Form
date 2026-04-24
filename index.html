@@ -1,139 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Survey Form</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Survey Form</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f1f3f4;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        .container {
-            width: 450px;
-            margin: 40px auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f0fe, #f8fafd);
+    color: #202124;
+}
 
-        h2 {
-            text-align: center;
-            color: #202124;
-        }
+.container {
+    max-width: 520px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
 
-        label {
-            display: block;
-            margin-top: 12px;
-            font-weight: bold;
-        }
+.header {
+    text-align: center;
+    border-top: 8px solid #4285f4;
+    padding-top: 18px;
+}
 
-        input, select, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
+.header h2 {
+    margin-bottom: 8px;
+    font-size: 28px;
+}
 
-        .radio-group, .checkbox-group {
-            margin-top: 5px;
-        }
+.header p {
+    color: #5f6368;
+    font-size: 14px;
+}
 
-        .radio-group label,
-        .checkbox-group label {
-            display: inline;
-            font-weight: normal;
-            margin-right: 10px;
-        }
+label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
 
-        button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 15px;
-            background-color: #4285f4;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
 
-        button:hover {
-            background-color: #3367d6;
-        }
-    </style>
+input:focus, select:focus, textarea:focus {
+    border-color: #4285f4;
+    box-shadow: 0 0 0 2px rgba(66,133,244,0.15);
+}
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.option {
+    background: #f8fafd;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-weight: normal;
+}
+
+.option input {
+    width: auto;
+    margin-right: 6px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 24px;
+    background: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3367d6;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 22px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
-    <h2>Google form</h2>
+    <div class="header">
+        <h2>Google Form</h2>
+        <p>Please fill out the form carefully</p>
+    </div>
 
-    <form action="#" method="post">
+    <form action="https://docs.google.com/forms/d/e/FORM_ID/formResponse" method="POST">
 
-   
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="full_name"
-               placeholder="Enter your name" required>
+        <label>Full Name</label>
+        <input type="text" name="entry.111111111" placeholder="Enter your full name" required>
 
-        <!-- Email -->
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email"
-               placeholder="Enter your email" required>
+        <label>Email Address</label>
+        <input type="email" name="entry.222222222" placeholder="Enter your email address" required>
 
-  
-        <label for="age">Age</label>
-        <input type="number" id="age" name="age"
-               placeholder="Enter your age" min="10" max="100" required>
+        <label>Age</label>
+        <input type="number" name="entry.333333333" placeholder="Enter your age" min="10" max="100" required>
 
-      
         <label>Gender</label>
         <div class="radio-group">
-            <input type="radio" name="gender" value="male" required> Male
-            <input type="radio" name="gender" value="female"> Female
-            <input type="radio" name="gender" value="other"> Other
+            <label class="option"><input type="radio" name="entry.444444444" value="Male" required> Male</label>
+            <label class="option"><input type="radio" name="entry.444444444" value="Female"> Female</label>
+            <label class="option"><input type="radio" name="entry.444444444" value="Other"> Other</label>
         </div>
 
- 
-        <label for="tech">Favorite Technology</label>
-        <select id="tech" name="technology" required>
-            <option value="">-- Select --</option>
-            <option value="html">HTML</option>
-            <option value="css">CSS</option>
-            <option value="javascript">JavaScript</option>
-            <option value="java">Java</option>
+        <label>Favorite Technology</label>
+        <select name="entry.555555555" required>
+            <option value="">Select technology</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Java">Java</option>
         </select>
 
-    
         <label>Skills Known</label>
         <div class="checkbox-group">
-            <input type="checkbox" name="skills" value="html"> HTML
-            <input type="checkbox" name="skills" value="css"> CSS
-            <input type="checkbox" name="skills" value="js"> JavaScript
+            <label class="option"><input type="checkbox" name="entry.666666666" value="HTML"> HTML</label>
+            <label class="option"><input type="checkbox" name="entry.666666666" value="CSS"> CSS</label>
+            <label class="option"><input type="checkbox" name="entry.666666666" value="JavaScript"> JavaScript</label>
         </div>
 
-        <label for="feedback">Feedback</label>
-        <textarea id="feedback" name="feedback" rows="4"
-                  placeholder="Write your feedback..." required></textarea>
+        <label>Feedback</label>
+        <textarea name="entry.777777777" rows="4" placeholder="Write your feedback here..." required></textarea>
 
+        <label>Rating</label>
+        <select name="entry.888888888" required>
+            <option value="">Select rating</option>
+            <option value="1">⭐ 1</option>
+            <option value="2">⭐⭐ 2</option>
+            <option value="3">⭐⭐⭐ 3</option>
+            <option value="4">⭐⭐⭐⭐ 4</option>
+            <option value="5">⭐⭐⭐⭐⭐ 5</option>
+        </select>
 
-        <label for="rating">Rating</label>
-
-<select id="rating" name="rating" required>
-  <option value="">Select rating</option>
-  <option value="1">⭐ 1</option>
-  <option value="2">⭐⭐ 2</option>
-  <option value="3">⭐⭐⭐ 3</option>
-  <option value="4">⭐⭐⭐⭐ 4</option>
-  <option value="5">⭐⭐⭐⭐⭐ 5</option>
-</select>
-
-   
-        <button type="submit">Submit</button>
+        <button type="submit">Submit Response</button>
 
     </form>
 </div>
